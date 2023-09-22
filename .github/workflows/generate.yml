@@ -11,7 +11,7 @@ on:
 jobs:
     generate:
         runs-on: ubuntu-latest
-        timeout-minutes: 60
+        timeout-minutes: 120
         container: node:18.18.0-alpine3.18
         steps:
             - name: checkout
