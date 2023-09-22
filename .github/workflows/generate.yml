@@ -17,7 +17,9 @@ jobs:
             - name: checkout
               uses: actions/checkout@v4
             - name: install
-              run: npm ci
+              run: |
+                apk add --no-cache bash curl
+                npm ci
             - name: generate
               run: npm run grab -- --site=tv.blue.ch --lang=de --days=7 --output=dist/guide.xml
             - name: upload artifact
