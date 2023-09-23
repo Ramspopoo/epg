@@ -4,3 +4,5 @@
 /guide.xml.gz
 /.jenkins/
 /guides/
+dist/
+!dist/robots.txt
