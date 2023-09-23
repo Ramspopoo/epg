@@ -13,6 +13,12 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 120
         container: node:18.18.0-alpine3.18
+        permissions:
+          pages: write
+          id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.gh-pages.outputs.page_url }}
         steps:
             - name: checkout
               uses: actions/checkout@v4
@@ -28,6 +34,7 @@ jobs:
                 name: 'github-pages'
                 path: 'dist/'
             - name: publish to pages
+              id: gh-pages
               uses: actions/deploy-pages@v2
               with:
                 artifact_name: 'github-pages'
