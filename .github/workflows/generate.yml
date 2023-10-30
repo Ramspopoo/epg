@@ -27,7 +27,7 @@ jobs:
                 apk add --no-cache bash curl tar
                 npm ci
             - name: generate
-              run: npm run grab -- --site=tv.blue.ch --lang=de --days=7 --output=dist/guide.xml
+              run: npx epg-grabber --config=sites/tv.blue.ch/tv.blue.ch.config.js --channels=sites/tv.blue.ch/tv.blue.ch.channels.xml --output=dist/guide.xml --days=7
             - name: upload artifact
               uses: actions/upload-pages-artifact@v2
               with:
