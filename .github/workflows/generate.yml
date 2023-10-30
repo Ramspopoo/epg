@@ -11,7 +11,7 @@ on:
 jobs:
     generate:
         runs-on: ubuntu-latest
-        timeout-minutes: 240
+        timeout-minutes: 480
         container: node:18.18.0-alpine3.18
         permissions:
           pages: write
