@@ -29,7 +29,7 @@ jobs:
             - name: generate
               run: npx epg-grabber --config=sites/tv.blue.ch/tv.blue.ch.config.js --channels=sites/tv.blue.ch/tv.blue.ch.channels.xml --output=dist/guide.xml --days=7
             - name: upload artifact
-              uses: actions/upload-pages-artifact@v2
+              uses: actions/upload-pages-artifact@v3
               with:
                 name: 'github-pages'
                 path: 'dist/'
